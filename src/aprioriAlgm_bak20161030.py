@@ -48,11 +48,7 @@ def returnItemsWithMinSupportV2(itemSet, lenItem, transactionList, minSupport, f
         _itemSet = hashTree_test02.subsetV2(itemList, root, freqSet, minSupport)  #自 itemSet --> _itemSet；对应参数itemSet返回_itemSet。
     return _itemSet
 
-# 使用BF进行候选集计数，传入[]、frozenset、str、int都可以，所以没有对传入到BF的元素做转换如转换为字符串。
-'''
-前如hash tree策略：对于每一项候选集，匹配事务，事务存储在hash tree；此策略对BF不适。因为BF存什么就【全量】匹配什么；
-现在策略：每次将N项候选集的集合存入BF，对于每一条事务，生成对应的N项集，匹配候选集，候选集存储在BF。
-'''
+# 使用BF进行候选集计数
 def returnItemsWithMinSupportV3(itemSet, lenItem, transactionList, minSupport, freqSet):
     _itemSet = set()
     localSet = defaultdict(int)
@@ -61,7 +57,6 @@ def returnItemsWithMinSupportV3(itemSet, lenItem, transactionList, minSupport, f
         filterCdd.add(val)
     for trans in transactionList:
         for cdd in combinations(trans, lenItem):
-            cdd = frozenset(cdd)
             if cdd in filterCdd:
                 freqSet[cdd] += 1           #zi 全局存一个
                 localSet[cdd] += 1          #zi 局部存一个，(item, count)，然后过滤小于minSupport的。
@@ -76,16 +71,12 @@ def returnItemsWithMinSupportV3(itemSet, lenItem, transactionList, minSupport, f
 def returnItemsWithMinSupportV4(itemSet, lenItem, transactionList, minSupport, freqSet):
     _itemSet = set()
     localSet = defaultdict(int)
-    def set2Str(cdd):
-        return "_".join(cdd)    
-    filterCdd = cuckoofilter.CuckooFilter(capacity = len(itemSet), fingerprint_size=1)
+    filterCdd = BloomFilter(capacity = len(itemSet), error_rate = 0.0001)
     for val in itemSet:
-        filterCdd.insert(set2Str(val))
-        
+        filterCdd.add(val)
     for trans in transactionList:
         for cdd in combinations(trans, lenItem):
-            cdd = frozenset(cdd)
-            if filterCdd.contains(set2Str(cdd)):
+            if cdd in filterCdd:
                 freqSet[cdd] += 1           #zi 全局存一个
                 localSet[cdd] += 1          #zi 局部存一个，(item, count)，然后过滤小于minSupport的。
     
@@ -95,9 +86,11 @@ def returnItemsWithMinSupportV4(itemSet, lenItem, transactionList, minSupport, f
             _itemSet.add(item)
     
     return _itemSet           
-
-
-
+                
+    
+    
+        
+    
 
 def joinSet(itemSet, length):
         """Join a set with itself and returns the n-element itemsets"""
@@ -128,12 +121,12 @@ def runApriori(data_iter, minSupport, minConfidence):
     # which satisfy minSupport
     assocRules = dict()
     # Dictionary which stores Association Rules
-    print("Counting 1-FIs start...")
+    print "Counting 1-FIs start..."
     oneCSet = returnItemsWithMinSupport(itemSet,
                                         transactionList,
                                         minSupport,
                                         freqSet)
-    print("Counting 1-FIs finished! And the 1-Freq is "+str(len(oneCSet)))
+    print "Counting 1-FIs finished! And the 1-Freq is "+str(len(oneCSet))
     currentLSet = oneCSet
     k = 2
     while(currentLSet != set([])):
@@ -141,16 +134,16 @@ def runApriori(data_iter, minSupport, minConfidence):
         # if put the judge behind, the largeSet cann't get 3-Freq data and func printResults() will forget to write it.
         if k > 4:
             break
-        print(str(k)+"-FIs start...  - %s" % round(time.clock(), 2))
-        print("Join start. And len and content of currentLSet is:%s,%s" %(len(currentLSet), currentLSet))
+        print str(k)+"-FIs start...  - %s" % round(time.clock(), 2)
+        print "Join start."
         currentLSet = joinSet(currentLSet, k)
-        print("Join over. Get candidate-set.\nCounting %s-FIs start. - %s" % (k, round(time.clock(), 2)))
+        print "Join over. Get candidate-set.\nCounting %s-FIs start. - %s" % (k, round(time.clock(), 2))
 #         if k==3:
 #             print "currentLSet:%s"%currentLSet
 #             print "transactionList:%s"%transactionList
 #             print "freqSet:%s"%freqSet
 #             exit()
-#         currentCSet = returnItemsWithMinSupport(currentLSet,          #zi format:set(frozenset,frozenset,...)
+#         currentCSet = returnItemsWithMinSupport(currentLSet,        #zi format:set(frozenset,frozenset,...)
 #                                                 transactionList,      #zi format:list(frozenset,frozenset,...)
 #                                                 minSupport,
 #                                                 freqSet)              #zi {itemSet:count, itemSet:count, ...}-- format:{frozenset(['267']): 223,...} 频繁项集计数；
@@ -161,13 +154,13 @@ def runApriori(data_iter, minSupport, minConfidence):
 #                                                 minSupport,
 #                                                 freqSet)              #zi {itemSet:count, itemSet:count, ...}-- format:{frozenset(['267']): 223,...} 频繁项集计数；
 #-------------------------------------------------------
-        currentCSet = returnItemsWithMinSupportV4(currentLSet,        #zi format:set(frozenset,frozenset,...)
+        currentCSet = returnItemsWithMinSupportV3(currentLSet,        #zi format:set(frozenset,frozenset,...)
                                                   k,
                                                 transactionList,      #zi format:list(frozenset,frozenset,...)
                                                 minSupport,
                                                 freqSet)              #zi {itemSet:count, itemSet:count, ...}-- format:{frozenset(['267']): 223,...} 频繁项集计数；       
         currentLSet = currentCSet
-        print("Counting %s-FIs finished! And the %s-Freq is %s. - %s " % (k, k, len(currentCSet), round(time.clock(),2)), "\n")
+        print "Counting %s-FIs finished! And the %s-Freq is %s. - %s " % (k, k, len(currentCSet), round(time.clock(),2)), "\n"
         k = k + 1
 
     def getSupport(item):
@@ -182,9 +175,8 @@ def runApriori(data_iter, minSupport, minConfidence):
                            for item in value])
 
     toRetRules = []
-    print("Start to get rules. - %s" % round(time.clock(), 2))
-    #python2# for key, value in largeSet.items()[1:]:
-    for key, value in list(largeSet.items())[1:]:
+    print "Start to get rules. - %s" % round(time.clock(), 2)
+    for key, value in largeSet.items()[1:]:
         for item in value:
             _subsets = map(frozenset, [x for x in subsets(item)])
             for element in _subsets:
@@ -198,24 +190,22 @@ def runApriori(data_iter, minSupport, minConfidence):
                         toRetRules.append(((tuple(element), tuple(remain)),
                                           (preCount, setCount, len(transactionList)),
                                            confidence))
-    print("Get rules over. - %s" % round(time.clock(), 2))
+    print "Get rules over. - %s" % round(time.clock(), 2)
     return toRetItems, toRetRules
 
 def printResults(items, rules, fileFIs, fileRules):
     """prints the generated itemsets sorted by support and the confidence rules sorted by confidence"""
     fFIs = open(fileFIs, 'w')
     fRules = open(fileRules, 'w')
-    #python2# for item, support, count, lenOfT in sorted(items, key=lambda (item, support, count, lenOfT): support):
-    for item, support, count, lenOfT in sorted(items, key=lambda items: items[1]):
+    for item, support, count, lenOfT in sorted(items, key=lambda (item, support, count, lenOfT): support):
         pass # print "item: %s , %.3f - %s/%s" % (str(item), support, count, lenOfT)
         fFIs.write("item:%s, %.3f - %s/%s\n" % (item, support, count, lenOfT))
-    print("\n------------------------ RULES:")
-    #python2# for rule, count, confidence in sorted(rules, key=lambda (rule, count, confidence): confidence):
-    for rule, count, confidence in sorted(rules, key=lambda rules: rules[2]):
+    print "\n------------------------ RULES:"
+    for rule, count, confidence in sorted(rules, key=lambda (rule, count, confidence): confidence):
         pre, post = rule
         preC, setC, lenOfT = count
         tempStr = "Rule:%s ==> %s, %.3f - preC:%s, setC:%s, lenOfT:%s\n" % (pre, post, confidence, preC, setC, lenOfT)
-        print("Rule: %s ==> %s , %.3f (preC:%s, setC:%s, lenOfT:%s)" % (pre, post, confidence, preC, setC, lenOfT))
+        print "Rule: %s ==> %s , %.3f (preC:%s, setC:%s, lenOfT:%s)" % (pre, post, confidence, preC, setC, lenOfT)
         fRules.write(tempStr)
 
     fFIs.close()
@@ -255,7 +245,7 @@ if __name__ == "__main__":
     elif options.input is not None:
             inFile = dataFromFile(options.input)
     else:
-            print('No dataset filename specified, system with exit\n')
+            print 'No dataset filename specified, system with exit\n'
             sys.exit('System will exit')
 
     minSupport = options.minS
@@ -268,7 +258,7 @@ if __name__ == "__main__":
     
     printResults(items, rules, fileFIs, fileRules)
     #
-    print('The End.')
+    print 'The End.'
     
     
     

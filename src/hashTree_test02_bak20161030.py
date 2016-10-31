@@ -117,7 +117,7 @@ def main():
     with open('./trans_1lines.txt', 'r') as fr:
         for trans in fr:
             if not trans.strip():
-                print("NoneType")
+                print "NoneType"
             else:
                 # print trans
                 transList = trans.strip('\n').lstrip('[\'').rstrip('\']').split("\', \'")
@@ -130,9 +130,9 @@ def main():
                 level = 0
                 root = HashTree(tempList, lenItem, level)
                 currentCSet = getCandidate(lenItem)
-                print("%s, currentCSet:"%(len(currentCSet)))
+                print "%s, currentCSet:"%(len(currentCSet))
                 currentLSet = subsetV2(currentCSet, root, freqSet, minSupport)
-                print("%s, currentLSet:"%(len(currentLSet)))
+                print "%s, currentLSet:"%(len(currentLSet))
                 # print "root.items:%s\n" % root.items
                 # print "root.leftChild:%s\n" % root.leftChild.items
                 # print "root.midChild:%s\n" % root.midChild.items
