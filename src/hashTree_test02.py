@@ -13,8 +13,7 @@ class HashTree:
         self.makeUpTree(level)
 
     # Make up the hash tree, it is a recursive process
-    def makeUpTree(self, level):
-        #zi 终止条件，如果：树的高度level== 项集的长度-1；都是从0开始，如0~3的树高取值，self.length.#zi 因为length从0开始，所以level也是从0开始。 # the terminal condition
+    def makeUpTree(self, level):       #zi 终止条件，如果：树的高度level== 项集的长度-1；都是从0开始，如0~3的树高取值，self.length.#zi 因为length从0开始，所以level也是从0开始。 # the terminal condition
         if level == self.length - 1:
             # temp store the k-item
             tempbucket = []

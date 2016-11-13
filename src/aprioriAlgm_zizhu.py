@@ -22,9 +22,17 @@ import re
 
 def subsets(arr):
     """ Returns non empty subsets of arr"""
-    return chain(*[combinations(arr, i + 1) for i, a in enumerate(arr)])    #zi 生成各个i的子序列
+    return chain(*[combinations(arr, i + 1) for i, a in enumerate(arr)])    #zi 生成各个长度为i的子序列
 
 #zi 输入参数：itemSet候选项的集合、事务数据库、minSupport、存储一/二/三...项频繁集的全局字典freqSet
+'''
+itemSet format: set(frozenset,frozenset,...)
+transactionList format: list(frozenset,frozenset,...)
+minSupport format: float
+freqSet format: {frozenset(['267']): 223,...}, {itemSet:count, itemSet:count, ...},频繁项集计数(不仅仅>minSup的吧)；
+—— ——
+_itemSet format: set([frozenset(['279']), frozenset(['469']),...)
+'''
 def returnItemsWithMinSupport(itemSet, transactionList, minSupport, freqSet):    
         """calculates the support for items in the itemSet and returns a subset
        of the itemSet each of whose elements satisfies the minimum support"""
@@ -44,7 +52,7 @@ def returnItemsWithMinSupport(itemSet, transactionList, minSupport, freqSet):
                 if support >= minSupport:
                         _itemSet.add(item)
 
-        return _itemSet                                       #zi _itemSet'format: set([frozenset(['279']), frozenset(['469']),...) #zi _itemSet如果添加的元素是列表形式的itemSet[]，则形式如([xx,xx,xx],[xx,xx],......)
+        return _itemSet                     #zi _itemSet'format: set([frozenset(['279']), frozenset(['469']),...) #zi _itemSet如果添加的元素是列表形式的itemSet[]，则形式如([xx,xx,xx],[xx,xx],......)
 '''
 currentCSet = returnItemsWithMinSupport(currentLSet,        #zi format:set(frozenset,frozenset,...)
                                         transactionList,    #zi format:list(frozenset,frozenset,...)
