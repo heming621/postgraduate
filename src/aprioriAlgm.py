@@ -79,6 +79,7 @@ def returnItemsWithMinSupportV3(itemSet, lenItem, transactionList, minSupport, f
         return set([])
     print("Store cdds in BF ... - %s"%getTime())
     for val in itemSet:
+        pass # 待引入counting BF，如达到minSup*len(transactionList)，则不插入；or 不用counting BF，判断，已在BF的则不再插入。 
         filterCdd.add(val)
     print("Mapping cddFromTrans on BF ... - %s"%getTime())
     for trans in transactionList:
