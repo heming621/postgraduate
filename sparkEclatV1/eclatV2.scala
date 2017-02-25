@@ -1,7 +1,9 @@
 import scala.collection._
+import scala.io.Source
+import java.io._
 
 object eclat{
-	val minSup = 0.5*6
+	val minSup = 0.5*8124 //0.5*6
 	def eclat(_prefix:Set[Int], _x:mutable.Map[Int,Set[Int]], _xx:mutable.Map[Int,Set[Int]], result:mutable.Map[Set[Int], Int]):mutable.Map[Set[Int],Int] = {//:Unit = {
 		var xx = _xx
 		var prefix = _prefix
@@ -31,12 +33,32 @@ object eclat{
 	        result	
 	}
 	def main(args:Array[String]){
-		var xx:mutable.Map[Int,Set[Int]] = mutable.Map(11->Set(3,4,5,6), 22->Set(1,2,3), 33->Set(4,6), 44->Set(1,3,5), 55->Set(1,2,4,5,6), 66->Set(1,2,4,6))
-		var x:mutable.Map[Int,Set[Int]] = mutable.Map(11->Set(3,4,5,6), 55->Set(1,2,4,5,6))//var x = xx
+                //// get itemSet_TIDs
+                var tid = 0
+                var itemTid:scala.collection.mutable.Map[Int, Set[Int]] = scala.collection.mutable.Map()
+                val LDATA_PATH = "/home/zhm/sparkEclatV1/data/mushroom.dat"
+                val bufferedSource = Source.fromFile(LDATA_PATH)
+                for(line<-bufferedSource.getLines){
+                        tid += 1;
+                        for(item<-line.split(" ")){
+                                var itemi = item.toInt
+                                if(!itemTid.contains(itemi))
+                                        itemTid += itemi->Set(tid)
+                                else
+                                        itemTid(itemi) += tid
+                        }
+                }
+                bufferedSource.close()
+                //// fim
+		//var xx:mutable.Map[Int,Set[Int]] = mutable.Map(11->Set(3,4,5,6), 22->Set(1,2,3), 33->Set(4,6), 44->Set(1,3,5), 55->Set(1,2,4,5,6), 66->Set(1,2,4,6))
+		//var x:mutable.Map[Int,Set[Int]] = mutable.Map(11->Set(3,4,5,6), 55->Set(1,2,4,5,6))//var x = xx
+                var xx = itemTid
+                var x = xx
                 var results:mutable.Map[Set[Int],Int] = mutable.Map()
 		eclat(Set(), x, xx, results)
 		println("\n")
 		println(results)
+                println(results.size)
 
 	}
 }
