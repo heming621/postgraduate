@@ -19,7 +19,7 @@ object eclat{
 			count += 1; println(s"Count:${count}");//println(s"prefix: ${prefix}; \nsuffix: ${xx}")
 			var itemtid = xx.last                  //zi :Tuple2[Int, Set[Int]] //(item, TIDSet)
 			var isup = itemtid._2.size
-			println(s"itemtid:${itemtid}: ${isup}")
+			println(s"itemtid:${itemtid}: ${isup}; ${prefix}")
 			xx = xx.dropRight(1)                   //zi && !(xx.keys.toSet & _x.keys.toSet).isEmpty
 			if(isup >= minSup){   //zi 取最后一个item_tid，如果满足最小支持度，并与剩余的(itemSet,TIDs)做交集。
 				prefix += (prefix.keys.to[scala.collection.mutable.Set].flatten + itemtid._1) -> isup
