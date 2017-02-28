@@ -15,7 +15,7 @@ object sEclat{
 			var isup = itemtid._2.size
 			var prefixRcs:Set[Int] = Set()  
 			xx = xx.dropRight(1)            
-			if(isup >= minSup && (_x.keys.toSet.contains(itemtid._1) | !prefix.isEmpty)){    //zi 只对出现在_x里面的item生成频繁集。//zi 取最后一个item_tid，如果满足最小支持度，并与剩余的(itemSet,TIDs)做交集。
+			if(isup >= minSup && _x.keys.toSet.contains(itemtid._1)){    //zi 只对出现在_x里面的item生成频繁集。//zi 取最后一个item_tid，如果满足最小支持度，并与剩余的(itemSet,TIDs)做交集。
                 prefixRcs = prefix + itemtid._1
 				println(prefixRcs -> isup)    
                 if(prefix.isEmpty)                               //zi prefix若为空，则非递归。
@@ -30,23 +30,21 @@ object sEclat{
 						                                 //zi 假设itemB与A的事务交集大于minSup，则递归时，看似存项B的支持度，实际存的是(A,B)项集的支持度。//zi 递归时候prefix不空。
 					}                                            
 				}
-				if(!(_x.keys.toSet & prefixRcs).isEmpty)
-					eclat(prefixRcs, _x, suffix, result, minSup) 
+				eclat(prefixRcs, _x, suffix, result, minSup) 
 			}
 		}
 	    Iterator(result)
 	}
 
 	def main(args: Array[String]){
-		var stime = System.currentTimeMillis()
 		val HDATA_PATH = "hdfs://zhm01:9000/user/root/data/mushroom.dat"
 		val LDATA_PATH = "/home/mountDir/downloads/data/mushroom.dat"
-		val minSup = (0.1*8124).toInt
+		val minSup = (0.5*8124).toInt
 		val conf = new SparkConf().setAppName("sEclat")
 		                          .set("spark.master", "spark://zhm01:7077")
 								  .set("spark.executor.memory", "8g")
-								  .set("spark.cores.max", "20")
-								  .set("spark.default.parallelism", "40")
+								  .set("spark.cores.max", "40")
+								  .set("spark.default.parallelism", "80")
         val sc = new SparkContext(conf)
         ////// READ FILE and get itemSet_TIDs, store in itemTid.
 		var tid = 0
@@ -68,24 +66,20 @@ object sEclat{
         //val bw = new BufferedWriter(new FileWriter(file))
 		//for(vl<-itemTid)bw.write(vl.toString+"\n")
 		//bw.close()
+
 		//// broadcast itemSet_TIDs and FIM
-		//itemTid = mutable.Map(11->Set(3,4,5,6), 22->Set(1,2,3), 33->Set(4,6), 44->Set(1,3,5), 55->Set(1,2,4,5,6), 66->Set(1,2,4,6))
-		//zi 因mapPartitions表示元素为分区，所以后面需要flatMap或类flatten展开。
 		var bcItemTid = sc.broadcast(itemTid)
 		var results:mutable.Map[Set[Int],Int] = mutable.Map()
-		var results2 = sc.parallelize(itemTid.toList).mapPartitions(part=>eclat(Set(), part.toMap, bcItemTid.value, results, minSup)).flatMap(x=>x).collect() 
+		var results2 = sc.parallelize(itemTid.toList).mapPartitions(part=>eclat(Set(), part.toMap, bcItemTid.value, results, minSup)).collect()
         
 		//// WRITE
         val fileName = new File("/home/zhm/sparkEclatV1/test.txt")
 		val bw = new BufferedWriter(new FileWriter(fileName))
-		var resultSort = results2.sortBy(_._2)
-		for(ve<-resultSort)
+		for(ve<-results2)
 			bw.write(ve.toString+"\n") //for(ve<-results2)println(ve)
 		bw.close()
-		var etime = System.currentTimeMillis()
-		println(s"Timecost: ${(etime-stime)/1000}s.")
 		println(s"Write into $fileName")
-		println(s"ResultsSize: ${results2.size}")
+		println(results2.size)
 
 	}
 }
