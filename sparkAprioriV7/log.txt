@@ -1,0 +1,783 @@
+[0m[[0minfo[0m] [0mSet current project to Spark Apriori (in build file:/home/zhm/sparkAprioriV2/)[0m
+[0m[[32msuccess[0m] [0mTotal time: 3 s, completed Dec 3, 2016 3:11:57 AM[0m
+16/12/03 03:11:59 INFO SparkContext: Running Spark version 2.0.1
+16/12/03 03:12:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/12/03 03:12:01 INFO SecurityManager: Changing view acls to: root
+16/12/03 03:12:01 INFO SecurityManager: Changing modify acls to: root
+16/12/03 03:12:01 INFO SecurityManager: Changing view acls groups to: 
+16/12/03 03:12:01 INFO SecurityManager: Changing modify acls groups to: 
+16/12/03 03:12:01 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(root); groups with view permissions: Set(); users  with modify permissions: Set(root); groups with modify permissions: Set()
+16/12/03 03:12:02 INFO Utils: Successfully started service 'sparkDriver' on port 59068.
+16/12/03 03:12:02 INFO SparkEnv: Registering MapOutputTracker
+16/12/03 03:12:02 INFO SparkEnv: Registering BlockManagerMaster
+16/12/03 03:12:02 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-59584b93-c3be-452e-b0dc-ffc85897d788
+16/12/03 03:12:02 INFO MemoryStore: MemoryStore started with capacity 366.3 MB
+16/12/03 03:12:02 INFO SparkEnv: Registering OutputCommitCoordinator
+16/12/03 03:12:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+16/12/03 03:12:03 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://192.168.67.81:4040
+16/12/03 03:12:03 INFO SparkContext: Added JAR file:/home/zhm/sparkAprioriV2/target/scala-2.11/spark-apriori_2.11-1.0.jar at spark://192.168.67.81:59068/jars/spark-apriori_2.11-1.0.jar with timestamp 1480763523169
+16/12/03 03:12:03 INFO Executor: Starting executor ID driver on host localhost
+16/12/03 03:12:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 48444.
+16/12/03 03:12:03 INFO NettyBlockTransferService: Server created on 192.168.67.81:48444
+16/12/03 03:12:03 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 192.168.67.81, 48444)
+16/12/03 03:12:03 INFO BlockManagerMasterEndpoint: Registering block manager 192.168.67.81:48444 with 366.3 MB RAM, BlockManagerId(driver, 192.168.67.81, 48444)
+16/12/03 03:12:03 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 192.168.67.81, 48444)
+16/12/03 03:12:05 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 194.2 KB, free 366.1 MB)
+16/12/03 03:12:05 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.3 KB, free 366.1 MB)
+16/12/03 03:12:05 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 192.168.67.81:48444 (size: 23.3 KB, free: 366.3 MB)
+16/12/03 03:12:05 INFO SparkContext: Created broadcast 0 from textFile at Sapriori.scala:18
+16/12/03 03:12:06 INFO FileInputFormat: Total input paths to process : 1
+16/12/03 03:12:06 INFO SparkContext: Starting job: collect at Sapriori.scala:19
+16/12/03 03:12:06 INFO DAGScheduler: Got job 0 (collect at Sapriori.scala:19) with 12 output partitions
+16/12/03 03:12:06 INFO DAGScheduler: Final stage: ResultStage 0 (collect at Sapriori.scala:19)
+16/12/03 03:12:06 INFO DAGScheduler: Parents of final stage: List()
+16/12/03 03:12:06 INFO DAGScheduler: Missing parents: List()
+16/12/03 03:12:06 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at map at Sapriori.scala:18), which has no missing parents
+16/12/03 03:12:06 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 3.2 KB, free 366.1 MB)
+16/12/03 03:12:06 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 1990.0 B, free 366.1 MB)
+16/12/03 03:12:06 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 192.168.67.81:48444 (size: 1990.0 B, free: 366.3 MB)
+16/12/03 03:12:06 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:12:06 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at map at Sapriori.scala:18)
+16/12/03 03:12:06 INFO TaskSchedulerImpl: Adding task set 0.0 with 12 tasks
+16/12/03 03:12:07 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, localhost, partition 0, ANY, 5494 bytes)
+16/12/03 03:12:07 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, localhost, partition 1, ANY, 5494 bytes)
+16/12/03 03:12:07 INFO TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2, localhost, partition 2, ANY, 5494 bytes)
+16/12/03 03:12:07 INFO TaskSetManager: Starting task 3.0 in stage 0.0 (TID 3, localhost, partition 3, ANY, 5494 bytes)
+16/12/03 03:12:07 INFO Executor: Running task 3.0 in stage 0.0 (TID 3)
+16/12/03 03:12:07 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+16/12/03 03:12:07 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/12/03 03:12:07 INFO Executor: Running task 2.0 in stage 0.0 (TID 2)
+16/12/03 03:12:07 INFO Executor: Fetching spark://192.168.67.81:59068/jars/spark-apriori_2.11-1.0.jar with timestamp 1480763523169
+16/12/03 03:12:07 INFO TransportClientFactory: Successfully created connection to /192.168.67.81:59068 after 60 ms (0 ms spent in bootstraps)
+16/12/03 03:12:07 INFO Utils: Fetching spark://192.168.67.81:59068/jars/spark-apriori_2.11-1.0.jar to /tmp/spark-528f4cc2-68e8-485b-9fa0-0e5dac505053/userFiles-13f61bf4-9f43-4f10-8713-34809eb0a375/fetchFileTemp7462217115082657107.tmp
+16/12/03 03:12:07 INFO Executor: Adding file:/tmp/spark-528f4cc2-68e8-485b-9fa0-0e5dac505053/userFiles-13f61bf4-9f43-4f10-8713-34809eb0a375/spark-apriori_2.11-1.0.jar to class loader
+16/12/03 03:12:07 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:47534+47534
+16/12/03 03:12:07 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:0+47534
+16/12/03 03:12:07 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:95068+47534
+16/12/03 03:12:07 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:142602+47534
+16/12/03 03:12:07 INFO deprecation: mapred.tip.id is deprecated. Instead, use mapreduce.task.id
+16/12/03 03:12:07 INFO deprecation: mapred.task.id is deprecated. Instead, use mapreduce.task.attempt.id
+16/12/03 03:12:07 INFO deprecation: mapred.task.is.map is deprecated. Instead, use mapreduce.task.ismap
+16/12/03 03:12:07 INFO deprecation: mapred.task.partition is deprecated. Instead, use mapreduce.task.partition
+16/12/03 03:12:07 INFO deprecation: mapred.job.id is deprecated. Instead, use mapreduce.job.id
+16/12/03 03:12:08 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 71079 bytes result sent to driver
+16/12/03 03:12:08 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 70975 bytes result sent to driver
+16/12/03 03:12:08 INFO Executor: Finished task 3.0 in stage 0.0 (TID 3). 70771 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 4.0 in stage 0.0 (TID 4, localhost, partition 4, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 4.0 in stage 0.0 (TID 4)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 5.0 in stage 0.0 (TID 5, localhost, partition 5, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 5.0 in stage 0.0 (TID 5)
+16/12/03 03:12:08 INFO Executor: Finished task 2.0 in stage 0.0 (TID 2). 71079 bytes result sent to driver
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:190136+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:237670+47534
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 6.0 in stage 0.0 (TID 6, localhost, partition 6, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 6.0 in stage 0.0 (TID 6)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1186 ms on localhost (1/12)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 7.0 in stage 0.0 (TID 7, localhost, partition 7, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 7.0 in stage 0.0 (TID 7)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1135 ms on localhost (2/12)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:285204+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:332738+47534
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 3.0 in stage 0.0 (TID 3) in 1149 ms on localhost (3/12)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 1162 ms on localhost (4/12)
+16/12/03 03:12:08 INFO Executor: Finished task 4.0 in stage 0.0 (TID 4). 70494 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 8.0 in stage 0.0 (TID 8, localhost, partition 8, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 4.0 in stage 0.0 (TID 4) in 243 ms on localhost (5/12)
+16/12/03 03:12:08 INFO Executor: Running task 8.0 in stage 0.0 (TID 8)
+16/12/03 03:12:08 INFO Executor: Finished task 7.0 in stage 0.0 (TID 7). 69981 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 9.0 in stage 0.0 (TID 9, localhost, partition 9, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 9.0 in stage 0.0 (TID 9)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:380272+47534
+16/12/03 03:12:08 INFO Executor: Finished task 5.0 in stage 0.0 (TID 5). 70392 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 7.0 in stage 0.0 (TID 7) in 172 ms on localhost (6/12)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:427806+47534
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 10.0 in stage 0.0 (TID 10, localhost, partition 10, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 10.0 in stage 0.0 (TID 10)
+16/12/03 03:12:08 INFO Executor: Finished task 6.0 in stage 0.0 (TID 6). 69673 bytes result sent to driver
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:475340+47534
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 11.0 in stage 0.0 (TID 11, localhost, partition 11, ANY, 5494 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 11.0 in stage 0.0 (TID 11)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 5.0 in stage 0.0 (TID 5) in 264 ms on localhost (7/12)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 6.0 in stage 0.0 (TID 6) in 242 ms on localhost (8/12)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:522874+47534
+16/12/03 03:12:08 INFO Executor: Finished task 9.0 in stage 0.0 (TID 9). 70188 bytes result sent to driver
+16/12/03 03:12:08 INFO Executor: Finished task 8.0 in stage 0.0 (TID 8). 69981 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 9.0 in stage 0.0 (TID 9) in 147 ms on localhost (9/12)
+16/12/03 03:12:08 INFO Executor: Finished task 10.0 in stage 0.0 (TID 10). 70188 bytes result sent to driver
+16/12/03 03:12:08 INFO Executor: Finished task 11.0 in stage 0.0 (TID 11). 70188 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 8.0 in stage 0.0 (TID 8) in 194 ms on localhost (10/12)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 10.0 in stage 0.0 (TID 10) in 152 ms on localhost (11/12)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 11.0 in stage 0.0 (TID 11) in 148 ms on localhost (12/12)
+16/12/03 03:12:08 INFO DAGScheduler: ResultStage 0 (collect at Sapriori.scala:19) finished in 1.578 s
+16/12/03 03:12:08 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/12/03 03:12:08 INFO DAGScheduler: Job 0 finished: collect at Sapriori.scala:19, took 1.780358 s
+16/12/03 03:12:08 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 917.7 KB, free 365.2 MB)
+16/12/03 03:12:08 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 158.8 KB, free 365.0 MB)
+16/12/03 03:12:08 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 192.168.67.81:48444 (size: 158.8 KB, free: 366.1 MB)
+16/12/03 03:12:08 INFO SparkContext: Created broadcast 2 from broadcast at Sapriori.scala:19
+16/12/03 03:12:08 INFO SparkContext: Starting job: count at Sapriori.scala:20
+16/12/03 03:12:08 INFO DAGScheduler: Got job 1 (count at Sapriori.scala:20) with 12 output partitions
+16/12/03 03:12:08 INFO DAGScheduler: Final stage: ResultStage 1 (count at Sapriori.scala:20)
+16/12/03 03:12:08 INFO DAGScheduler: Parents of final stage: List()
+16/12/03 03:12:08 INFO DAGScheduler: Missing parents: List()
+16/12/03 03:12:08 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[2] at map at Sapriori.scala:18), which has no missing parents
+16/12/03 03:12:08 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 3.0 KB, free 365.0 MB)
+16/12/03 03:12:08 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 1938.0 B, free 365.0 MB)
+16/12/03 03:12:08 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 192.168.67.81:48444 (size: 1938.0 B, free: 366.1 MB)
+16/12/03 03:12:08 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:12:08 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 1 (MapPartitionsRDD[2] at map at Sapriori.scala:18)
+16/12/03 03:12:08 INFO TaskSchedulerImpl: Adding task set 1.0 with 12 tasks
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 12, localhost, partition 0, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 13, localhost, partition 1, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 2.0 in stage 1.0 (TID 14, localhost, partition 2, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 3.0 in stage 1.0 (TID 15, localhost, partition 3, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 0.0 in stage 1.0 (TID 12)
+16/12/03 03:12:08 INFO Executor: Running task 1.0 in stage 1.0 (TID 13)
+16/12/03 03:12:08 INFO Executor: Running task 2.0 in stage 1.0 (TID 14)
+16/12/03 03:12:08 INFO Executor: Running task 3.0 in stage 1.0 (TID 15)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:0+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:95068+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:47534+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:142602+47534
+16/12/03 03:12:08 INFO Executor: Finished task 0.0 in stage 1.0 (TID 12). 1041 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 4.0 in stage 1.0 (TID 16, localhost, partition 4, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 12) in 135 ms on localhost (1/12)
+16/12/03 03:12:08 INFO Executor: Finished task 2.0 in stage 1.0 (TID 14). 954 bytes result sent to driver
+16/12/03 03:12:08 INFO Executor: Finished task 3.0 in stage 1.0 (TID 15). 954 bytes result sent to driver
+16/12/03 03:12:08 INFO Executor: Finished task 1.0 in stage 1.0 (TID 13). 954 bytes result sent to driver
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 5.0 in stage 1.0 (TID 17, localhost, partition 5, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 4.0 in stage 1.0 (TID 16)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 2.0 in stage 1.0 (TID 14) in 139 ms on localhost (2/12)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 6.0 in stage 1.0 (TID 18, localhost, partition 6, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 3.0 in stage 1.0 (TID 15) in 140 ms on localhost (3/12)
+16/12/03 03:12:08 INFO Executor: Running task 5.0 in stage 1.0 (TID 17)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:190136+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:237670+47534
+16/12/03 03:12:08 INFO Executor: Running task 6.0 in stage 1.0 (TID 18)
+16/12/03 03:12:08 INFO TaskSetManager: Starting task 7.0 in stage 1.0 (TID 19, localhost, partition 7, ANY, 5410 bytes)
+16/12/03 03:12:08 INFO Executor: Running task 7.0 in stage 1.0 (TID 19)
+16/12/03 03:12:08 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 13) in 166 ms on localhost (4/12)
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:285204+47534
+16/12/03 03:12:08 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:332738+47534
+16/12/03 03:12:09 INFO Executor: Finished task 6.0 in stage 1.0 (TID 18). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 8.0 in stage 1.0 (TID 20, localhost, partition 8, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO Executor: Finished task 7.0 in stage 1.0 (TID 19). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 6.0 in stage 1.0 (TID 18) in 76 ms on localhost (5/12)
+16/12/03 03:12:09 INFO Executor: Running task 8.0 in stage 1.0 (TID 20)
+16/12/03 03:12:09 INFO Executor: Finished task 5.0 in stage 1.0 (TID 17). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 9.0 in stage 1.0 (TID 21, localhost, partition 9, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO Executor: Running task 9.0 in stage 1.0 (TID 21)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:380272+47534
+16/12/03 03:12:09 INFO Executor: Finished task 4.0 in stage 1.0 (TID 16). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 10.0 in stage 1.0 (TID 22, localhost, partition 10, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 5.0 in stage 1.0 (TID 17) in 96 ms on localhost (6/12)
+16/12/03 03:12:09 INFO Executor: Running task 10.0 in stage 1.0 (TID 22)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 11.0 in stage 1.0 (TID 23, localhost, partition 11, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 7.0 in stage 1.0 (TID 19) in 80 ms on localhost (7/12)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 4.0 in stage 1.0 (TID 16) in 117 ms on localhost (8/12)
+16/12/03 03:12:09 INFO Executor: Running task 11.0 in stage 1.0 (TID 23)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:427806+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:475340+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:522874+47534
+16/12/03 03:12:09 INFO Executor: Finished task 8.0 in stage 1.0 (TID 20). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 8.0 in stage 1.0 (TID 20) in 43 ms on localhost (9/12)
+16/12/03 03:12:09 INFO Executor: Finished task 10.0 in stage 1.0 (TID 22). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 10.0 in stage 1.0 (TID 22) in 37 ms on localhost (10/12)
+16/12/03 03:12:09 INFO Executor: Finished task 9.0 in stage 1.0 (TID 21). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 9.0 in stage 1.0 (TID 21) in 50 ms on localhost (11/12)
+16/12/03 03:12:09 INFO Executor: Finished task 11.0 in stage 1.0 (TID 23). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 11.0 in stage 1.0 (TID 23) in 46 ms on localhost (12/12)
+16/12/03 03:12:09 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+16/12/03 03:12:09 INFO DAGScheduler: ResultStage 1 (count at Sapriori.scala:20) finished in 0.291 s
+16/12/03 03:12:09 INFO DAGScheduler: Job 1 finished: count at Sapriori.scala:20, took 0.320363 s
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 24.0 B, free 365.0 MB)
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 120.0 B, free 365.0 MB)
+16/12/03 03:12:09 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 192.168.67.81:48444 (size: 120.0 B, free: 366.1 MB)
+16/12/03 03:12:09 INFO SparkContext: Created broadcast 4 from broadcast at Sapriori.scala:20
+16/12/03 03:12:09 INFO SparkContext: Starting job: count at Sapriori.scala:21
+16/12/03 03:12:09 INFO DAGScheduler: Got job 2 (count at Sapriori.scala:21) with 12 output partitions
+16/12/03 03:12:09 INFO DAGScheduler: Final stage: ResultStage 2 (count at Sapriori.scala:21)
+16/12/03 03:12:09 INFO DAGScheduler: Parents of final stage: List()
+16/12/03 03:12:09 INFO DAGScheduler: Missing parents: List()
+16/12/03 03:12:09 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[2] at map at Sapriori.scala:18), which has no missing parents
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 3.0 KB, free 365.0 MB)
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 1938.0 B, free 365.0 MB)
+16/12/03 03:12:09 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 192.168.67.81:48444 (size: 1938.0 B, free: 366.1 MB)
+16/12/03 03:12:09 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:12:09 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 2 (MapPartitionsRDD[2] at map at Sapriori.scala:18)
+16/12/03 03:12:09 INFO TaskSchedulerImpl: Adding task set 2.0 with 12 tasks
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 24, localhost, partition 0, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 25, localhost, partition 1, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 2.0 in stage 2.0 (TID 26, localhost, partition 2, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 3.0 in stage 2.0 (TID 27, localhost, partition 3, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO Executor: Running task 0.0 in stage 2.0 (TID 24)
+16/12/03 03:12:09 INFO Executor: Running task 1.0 in stage 2.0 (TID 25)
+16/12/03 03:12:09 INFO Executor: Running task 2.0 in stage 2.0 (TID 26)
+16/12/03 03:12:09 INFO Executor: Running task 3.0 in stage 2.0 (TID 27)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:47534+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:0+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:142602+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:95068+47534
+16/12/03 03:12:09 INFO Executor: Finished task 1.0 in stage 2.0 (TID 25). 1041 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 4.0 in stage 2.0 (TID 28, localhost, partition 4, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 25) in 58 ms on localhost (1/12)
+16/12/03 03:12:09 INFO Executor: Running task 4.0 in stage 2.0 (TID 28)
+16/12/03 03:12:09 INFO Executor: Finished task 0.0 in stage 2.0 (TID 24). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 5.0 in stage 2.0 (TID 29, localhost, partition 5, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:190136+47534
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 24) in 78 ms on localhost (2/12)
+16/12/03 03:12:09 INFO Executor: Running task 5.0 in stage 2.0 (TID 29)
+16/12/03 03:12:09 INFO Executor: Finished task 3.0 in stage 2.0 (TID 27). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO Executor: Finished task 2.0 in stage 2.0 (TID 26). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 6.0 in stage 2.0 (TID 30, localhost, partition 6, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 3.0 in stage 2.0 (TID 27) in 82 ms on localhost (3/12)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:237670+47534
+16/12/03 03:12:09 INFO Executor: Running task 6.0 in stage 2.0 (TID 30)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 2.0 in stage 2.0 (TID 26) in 89 ms on localhost (4/12)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 7.0 in stage 2.0 (TID 31, localhost, partition 7, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO Executor: Running task 7.0 in stage 2.0 (TID 31)
+16/12/03 03:12:09 INFO Executor: Finished task 4.0 in stage 2.0 (TID 28). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:285204+47534
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 8.0 in stage 2.0 (TID 32, localhost, partition 8, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO Executor: Running task 8.0 in stage 2.0 (TID 32)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 4.0 in stage 2.0 (TID 28) in 63 ms on localhost (5/12)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:380272+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:332738+47534
+16/12/03 03:12:09 INFO Executor: Finished task 5.0 in stage 2.0 (TID 29). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 9.0 in stage 2.0 (TID 33, localhost, partition 9, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 5.0 in stage 2.0 (TID 29) in 77 ms on localhost (6/12)
+16/12/03 03:12:09 INFO Executor: Running task 9.0 in stage 2.0 (TID 33)
+16/12/03 03:12:09 INFO Executor: Finished task 6.0 in stage 2.0 (TID 30). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 10.0 in stage 2.0 (TID 34, localhost, partition 10, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 6.0 in stage 2.0 (TID 30) in 64 ms on localhost (7/12)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:427806+47534
+16/12/03 03:12:09 INFO Executor: Running task 10.0 in stage 2.0 (TID 34)
+16/12/03 03:12:09 INFO Executor: Finished task 7.0 in stage 2.0 (TID 31). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:475340+47534
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 11.0 in stage 2.0 (TID 35, localhost, partition 11, ANY, 5410 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 7.0 in stage 2.0 (TID 31) in 69 ms on localhost (8/12)
+16/12/03 03:12:09 INFO Executor: Finished task 8.0 in stage 2.0 (TID 32). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO Executor: Running task 11.0 in stage 2.0 (TID 35)
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 8.0 in stage 2.0 (TID 32) in 61 ms on localhost (9/12)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:522874+47534
+16/12/03 03:12:09 INFO Executor: Finished task 10.0 in stage 2.0 (TID 34). 1041 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 10.0 in stage 2.0 (TID 34) in 51 ms on localhost (10/12)
+16/12/03 03:12:09 INFO Executor: Finished task 9.0 in stage 2.0 (TID 33). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 9.0 in stage 2.0 (TID 33) in 73 ms on localhost (11/12)
+16/12/03 03:12:09 INFO Executor: Finished task 11.0 in stage 2.0 (TID 35). 954 bytes result sent to driver
+16/12/03 03:12:09 INFO TaskSetManager: Finished task 11.0 in stage 2.0 (TID 35) in 44 ms on localhost (12/12)
+16/12/03 03:12:09 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+16/12/03 03:12:09 INFO DAGScheduler: ResultStage 2 (count at Sapriori.scala:21) finished in 0.215 s
+16/12/03 03:12:09 INFO DAGScheduler: Job 2 finished: count at Sapriori.scala:21, took 0.247548 s
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 24.0 B, free 365.0 MB)
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 119.0 B, free 365.0 MB)
+16/12/03 03:12:09 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 192.168.67.81:48444 (size: 119.0 B, free: 366.1 MB)
+16/12/03 03:12:09 INFO SparkContext: Created broadcast 6 from broadcast at Sapriori.scala:21
+
+lenOfTrans:Broadcast(4).value
+
+
+rawTrans:MapPartitionsRDD[2] at map at Sapriori.scala:18
+
+16/12/03 03:12:09 INFO SparkContext: Starting job: collect at Sapriori.scala:59
+16/12/03 03:12:09 INFO DAGScheduler: Registering RDD 4 (map at Sapriori.scala:22)
+16/12/03 03:12:09 INFO DAGScheduler: Got job 3 (collect at Sapriori.scala:59) with 12 output partitions
+16/12/03 03:12:09 INFO DAGScheduler: Final stage: ResultStage 4 (collect at Sapriori.scala:59)
+16/12/03 03:12:09 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+16/12/03 03:12:09 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 3)
+16/12/03 03:12:09 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[4] at map at Sapriori.scala:22), which has no missing parents
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 4.8 KB, free 365.0 MB)
+16/12/03 03:12:09 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 2.8 KB, free 365.0 MB)
+16/12/03 03:12:09 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 192.168.67.81:48444 (size: 2.8 KB, free: 366.1 MB)
+16/12/03 03:12:09 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:12:09 INFO DAGScheduler: Submitting 12 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[4] at map at Sapriori.scala:22)
+16/12/03 03:12:09 INFO TaskSchedulerImpl: Adding task set 3.0 with 12 tasks
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 36, localhost, partition 0, ANY, 5484 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 37, localhost, partition 1, ANY, 5484 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 2.0 in stage 3.0 (TID 38, localhost, partition 2, ANY, 5484 bytes)
+16/12/03 03:12:09 INFO TaskSetManager: Starting task 3.0 in stage 3.0 (TID 39, localhost, partition 3, ANY, 5484 bytes)
+16/12/03 03:12:09 INFO Executor: Running task 0.0 in stage 3.0 (TID 36)
+16/12/03 03:12:09 INFO Executor: Running task 3.0 in stage 3.0 (TID 39)
+16/12/03 03:12:09 INFO Executor: Running task 2.0 in stage 3.0 (TID 38)
+16/12/03 03:12:09 INFO Executor: Running task 1.0 in stage 3.0 (TID 37)
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:95068+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:0+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:142602+47534
+16/12/03 03:12:09 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:47534+47534
+16/12/03 03:12:10 INFO Executor: Finished task 2.0 in stage 3.0 (TID 38). 1586 bytes result sent to driver
+16/12/03 03:12:10 INFO Executor: Finished task 1.0 in stage 3.0 (TID 37). 1586 bytes result sent to driver
+16/12/03 03:12:10 INFO Executor: Finished task 0.0 in stage 3.0 (TID 36). 1586 bytes result sent to driver
+16/12/03 03:12:10 INFO Executor: Finished task 3.0 in stage 3.0 (TID 39). 1586 bytes result sent to driver
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 4.0 in stage 3.0 (TID 40, localhost, partition 4, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO Executor: Running task 4.0 in stage 3.0 (TID 40)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 5.0 in stage 3.0 (TID 41, localhost, partition 5, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO Executor: Running task 5.0 in stage 3.0 (TID 41)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 6.0 in stage 3.0 (TID 42, localhost, partition 6, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:190136+47534
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 2.0 in stage 3.0 (TID 38) in 671 ms on localhost (1/12)
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 36) in 682 ms on localhost (2/12)
+16/12/03 03:12:10 INFO Executor: Running task 6.0 in stage 3.0 (TID 42)
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 37) in 675 ms on localhost (3/12)
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:237670+47534
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 3.0 in stage 3.0 (TID 39) in 675 ms on localhost (4/12)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 7.0 in stage 3.0 (TID 43, localhost, partition 7, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO Executor: Running task 7.0 in stage 3.0 (TID 43)
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:285204+47534
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:332738+47534
+16/12/03 03:12:10 INFO Executor: Finished task 4.0 in stage 3.0 (TID 40). 1586 bytes result sent to driver
+16/12/03 03:12:10 INFO Executor: Finished task 7.0 in stage 3.0 (TID 43). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 8.0 in stage 3.0 (TID 44, localhost, partition 8, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO Executor: Running task 8.0 in stage 3.0 (TID 44)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 9.0 in stage 3.0 (TID 45, localhost, partition 9, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 4.0 in stage 3.0 (TID 40) in 92 ms on localhost (5/12)
+16/12/03 03:12:10 INFO Executor: Running task 9.0 in stage 3.0 (TID 45)
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 7.0 in stage 3.0 (TID 43) in 81 ms on localhost (6/12)
+16/12/03 03:12:10 INFO Executor: Finished task 5.0 in stage 3.0 (TID 41). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:427806+47534
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 10.0 in stage 3.0 (TID 46, localhost, partition 10, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:380272+47534
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 5.0 in stage 3.0 (TID 41) in 97 ms on localhost (7/12)
+16/12/03 03:12:10 INFO Executor: Running task 10.0 in stage 3.0 (TID 46)
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:475340+47534
+16/12/03 03:12:10 INFO Executor: Finished task 6.0 in stage 3.0 (TID 42). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 11.0 in stage 3.0 (TID 47, localhost, partition 11, ANY, 5484 bytes)
+16/12/03 03:12:10 INFO Executor: Running task 11.0 in stage 3.0 (TID 47)
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 6.0 in stage 3.0 (TID 42) in 112 ms on localhost (8/12)
+16/12/03 03:12:10 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:522874+47534
+16/12/03 03:12:10 INFO Executor: Finished task 9.0 in stage 3.0 (TID 45). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO Executor: Finished task 10.0 in stage 3.0 (TID 46). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 9.0 in stage 3.0 (TID 45) in 83 ms on localhost (9/12)
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 10.0 in stage 3.0 (TID 46) in 78 ms on localhost (10/12)
+16/12/03 03:12:10 INFO Executor: Finished task 11.0 in stage 3.0 (TID 47). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 11.0 in stage 3.0 (TID 47) in 71 ms on localhost (11/12)
+16/12/03 03:12:10 INFO Executor: Finished task 8.0 in stage 3.0 (TID 44). 1499 bytes result sent to driver
+16/12/03 03:12:10 INFO TaskSetManager: Finished task 8.0 in stage 3.0 (TID 44) in 162 ms on localhost (12/12)
+16/12/03 03:12:10 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+16/12/03 03:12:10 INFO DAGScheduler: ShuffleMapStage 3 (map at Sapriori.scala:22) finished in 0.929 s
+16/12/03 03:12:10 INFO DAGScheduler: looking for newly runnable stages
+16/12/03 03:12:10 INFO DAGScheduler: running: Set()
+16/12/03 03:12:10 INFO DAGScheduler: waiting: Set(ResultStage 4)
+16/12/03 03:12:10 INFO DAGScheduler: failed: Set()
+16/12/03 03:12:10 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[7] at map at Sapriori.scala:59), which has no missing parents
+16/12/03 03:12:10 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 4.4 KB, free 365.0 MB)
+16/12/03 03:12:10 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 2.5 KB, free 365.0 MB)
+16/12/03 03:12:10 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 192.168.67.81:48444 (size: 2.5 KB, free: 366.1 MB)
+16/12/03 03:12:10 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:12:10 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 4 (MapPartitionsRDD[7] at map at Sapriori.scala:59)
+16/12/03 03:12:10 INFO TaskSchedulerImpl: Adding task set 4.0 with 12 tasks
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 48, localhost, partition 0, ANY, 5252 bytes)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 49, localhost, partition 1, ANY, 5252 bytes)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 2.0 in stage 4.0 (TID 50, localhost, partition 2, ANY, 5252 bytes)
+16/12/03 03:12:10 INFO TaskSetManager: Starting task 3.0 in stage 4.0 (TID 51, localhost, partition 3, ANY, 5252 bytes)
+16/12/03 03:12:10 INFO Executor: Running task 0.0 in stage 4.0 (TID 48)
+16/12/03 03:12:10 INFO Executor: Running task 1.0 in stage 4.0 (TID 49)
+16/12/03 03:12:10 INFO Executor: Running task 2.0 in stage 4.0 (TID 50)
+16/12/03 03:12:10 INFO Executor: Running task 3.0 in stage 4.0 (TID 51)
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 17 ms
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 15 ms
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 16 ms
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 17 ms
+16/12/03 03:12:11 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 192.168.67.81:48444 in memory (size: 1990.0 B, free: 366.1 MB)
+16/12/03 03:12:11 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 192.168.67.81:48444 in memory (size: 1938.0 B, free: 366.1 MB)
+16/12/03 03:12:11 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 192.168.67.81:48444 in memory (size: 1938.0 B, free: 366.1 MB)
+16/12/03 03:12:11 INFO Executor: Finished task 3.0 in stage 4.0 (TID 51). 2144 bytes result sent to driver
+16/12/03 03:12:11 INFO Executor: Finished task 2.0 in stage 4.0 (TID 50). 2139 bytes result sent to driver
+16/12/03 03:12:11 INFO Executor: Finished task 0.0 in stage 4.0 (TID 48). 2097 bytes result sent to driver
+16/12/03 03:12:11 INFO Executor: Finished task 1.0 in stage 4.0 (TID 49). 2144 bytes result sent to driver
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 4.0 in stage 4.0 (TID 52, localhost, partition 4, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO Executor: Running task 4.0 in stage 4.0 (TID 52)
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 5.0 in stage 4.0 (TID 53, localhost, partition 5, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 6.0 in stage 4.0 (TID 54, localhost, partition 6, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO Executor: Running task 5.0 in stage 4.0 (TID 53)
+16/12/03 03:12:11 INFO Executor: Running task 6.0 in stage 4.0 (TID 54)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 3.0 in stage 4.0 (TID 51) in 148 ms on localhost (1/12)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 2.0 in stage 4.0 (TID 50) in 152 ms on localhost (2/12)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 48) in 159 ms on localhost (3/12)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 49) in 155 ms on localhost (4/12)
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 5 ms
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 7.0 in stage 4.0 (TID 55, localhost, partition 7, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO Executor: Running task 7.0 in stage 4.0 (TID 55)
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:12:11 INFO Executor: Finished task 7.0 in stage 4.0 (TID 55). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 8.0 in stage 4.0 (TID 56, localhost, partition 8, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 7.0 in stage 4.0 (TID 55) in 31 ms on localhost (5/12)
+16/12/03 03:12:11 INFO Executor: Running task 8.0 in stage 4.0 (TID 56)
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:12:11 INFO Executor: Finished task 4.0 in stage 4.0 (TID 52). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO Executor: Finished task 6.0 in stage 4.0 (TID 54). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 9.0 in stage 4.0 (TID 57, localhost, partition 9, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 10.0 in stage 4.0 (TID 58, localhost, partition 10, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO Executor: Running task 10.0 in stage 4.0 (TID 58)
+16/12/03 03:12:11 INFO Executor: Running task 9.0 in stage 4.0 (TID 57)
+16/12/03 03:12:11 INFO Executor: Finished task 5.0 in stage 4.0 (TID 53). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 4.0 in stage 4.0 (TID 52) in 62 ms on localhost (6/12)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 6.0 in stage 4.0 (TID 54) in 59 ms on localhost (7/12)
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 11.0 in stage 4.0 (TID 59, localhost, partition 11, ANY, 5252 bytes)
+16/12/03 03:12:11 INFO Executor: Running task 11.0 in stage 4.0 (TID 59)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 5.0 in stage 4.0 (TID 53) in 71 ms on localhost (8/12)
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:12:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:12:11 INFO Executor: Finished task 8.0 in stage 4.0 (TID 56). 2144 bytes result sent to driver
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 8.0 in stage 4.0 (TID 56) in 45 ms on localhost (9/12)
+16/12/03 03:12:11 INFO Executor: Finished task 11.0 in stage 4.0 (TID 59). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO Executor: Finished task 10.0 in stage 4.0 (TID 58). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO Executor: Finished task 9.0 in stage 4.0 (TID 57). 2057 bytes result sent to driver
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 11.0 in stage 4.0 (TID 59) in 34 ms on localhost (10/12)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 10.0 in stage 4.0 (TID 58) in 46 ms on localhost (11/12)
+16/12/03 03:12:11 INFO TaskSetManager: Finished task 9.0 in stage 4.0 (TID 57) in 49 ms on localhost (12/12)
+16/12/03 03:12:11 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+16/12/03 03:12:11 INFO DAGScheduler: ResultStage 4 (collect at Sapriori.scala:59) finished in 0.249 s
+16/12/03 03:12:11 INFO DAGScheduler: Job 3 finished: collect at Sapriori.scala:59, took 1.730016 s
+16/12/03 03:12:11 INFO SparkContext: Starting job: collect at Sapriori.scala:69
+16/12/03 03:12:11 INFO DAGScheduler: Registering RDD 8 (flatMap at Sapriori.scala:48)
+16/12/03 03:12:11 INFO DAGScheduler: Got job 4 (collect at Sapriori.scala:69) with 12 output partitions
+16/12/03 03:12:11 INFO DAGScheduler: Final stage: ResultStage 6 (collect at Sapriori.scala:69)
+16/12/03 03:12:11 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+16/12/03 03:12:11 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 5)
+16/12/03 03:12:11 INFO DAGScheduler: Submitting ShuffleMapStage 5 (MapPartitionsRDD[8] at flatMap at Sapriori.scala:48), which has no missing parents
+16/12/03 03:12:11 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 114.8 KB, free 364.9 MB)
+16/12/03 03:12:11 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 45.9 KB, free 364.9 MB)
+16/12/03 03:12:11 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 192.168.67.81:48444 (size: 45.9 KB, free: 366.1 MB)
+16/12/03 03:12:11 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:12:11 INFO DAGScheduler: Submitting 12 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[8] at flatMap at Sapriori.scala:48)
+16/12/03 03:12:11 INFO TaskSchedulerImpl: Adding task set 5.0 with 12 tasks
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 60, localhost, partition 0, ANY, 5484 bytes)
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 61, localhost, partition 1, ANY, 5484 bytes)
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 2.0 in stage 5.0 (TID 62, localhost, partition 2, ANY, 5484 bytes)
+16/12/03 03:12:11 INFO TaskSetManager: Starting task 3.0 in stage 5.0 (TID 63, localhost, partition 3, ANY, 5484 bytes)
+16/12/03 03:12:11 INFO Executor: Running task 0.0 in stage 5.0 (TID 60)
+16/12/03 03:12:11 INFO Executor: Running task 1.0 in stage 5.0 (TID 61)
+16/12/03 03:12:11 INFO Executor: Running task 2.0 in stage 5.0 (TID 62)
+16/12/03 03:12:11 INFO Executor: Running task 3.0 in stage 5.0 (TID 63)
+16/12/03 03:12:11 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:47534+47534
+16/12/03 03:12:11 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:95068+47534
+16/12/03 03:12:11 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:0+47534
+16/12/03 03:12:11 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:142602+47534
+16/12/03 03:12:12 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 192.168.67.81:48444 in memory (size: 2.8 KB, free: 366.1 MB)
+16/12/03 03:12:12 INFO BlockManagerInfo: Removed broadcast_8_piece0 on 192.168.67.81:48444 in memory (size: 2.5 KB, free: 366.1 MB)
+16/12/03 03:12:38 INFO Executor: Finished task 3.0 in stage 5.0 (TID 63). 1572 bytes result sent to driver
+16/12/03 03:12:38 INFO TaskSetManager: Starting task 4.0 in stage 5.0 (TID 64, localhost, partition 4, ANY, 5484 bytes)
+16/12/03 03:12:38 INFO TaskSetManager: Finished task 3.0 in stage 5.0 (TID 63) in 26783 ms on localhost (1/12)
+16/12/03 03:12:38 INFO Executor: Running task 4.0 in stage 5.0 (TID 64)
+16/12/03 03:12:38 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:190136+47534
+16/12/03 03:12:38 INFO Executor: Finished task 1.0 in stage 5.0 (TID 61). 1572 bytes result sent to driver
+16/12/03 03:12:38 INFO TaskSetManager: Starting task 5.0 in stage 5.0 (TID 65, localhost, partition 5, ANY, 5484 bytes)
+16/12/03 03:12:38 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 61) in 27083 ms on localhost (2/12)
+16/12/03 03:12:38 INFO Executor: Running task 5.0 in stage 5.0 (TID 65)
+16/12/03 03:12:38 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:237670+47534
+16/12/03 03:12:38 INFO Executor: Finished task 2.0 in stage 5.0 (TID 62). 1572 bytes result sent to driver
+16/12/03 03:12:38 INFO TaskSetManager: Starting task 6.0 in stage 5.0 (TID 66, localhost, partition 6, ANY, 5484 bytes)
+16/12/03 03:12:38 INFO Executor: Running task 6.0 in stage 5.0 (TID 66)
+16/12/03 03:12:38 INFO TaskSetManager: Finished task 2.0 in stage 5.0 (TID 62) in 27148 ms on localhost (3/12)
+16/12/03 03:12:38 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:285204+47534
+16/12/03 03:12:38 INFO Executor: Finished task 0.0 in stage 5.0 (TID 60). 1572 bytes result sent to driver
+16/12/03 03:12:38 INFO TaskSetManager: Starting task 7.0 in stage 5.0 (TID 67, localhost, partition 7, ANY, 5484 bytes)
+16/12/03 03:12:38 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 60) in 27314 ms on localhost (4/12)
+16/12/03 03:12:38 INFO Executor: Running task 7.0 in stage 5.0 (TID 67)
+16/12/03 03:12:38 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:332738+47534
+16/12/03 03:13:03 INFO Executor: Finished task 4.0 in stage 5.0 (TID 64). 1572 bytes result sent to driver
+16/12/03 03:13:03 INFO TaskSetManager: Starting task 8.0 in stage 5.0 (TID 68, localhost, partition 8, ANY, 5484 bytes)
+16/12/03 03:13:03 INFO TaskSetManager: Finished task 4.0 in stage 5.0 (TID 64) in 25385 ms on localhost (5/12)
+16/12/03 03:13:03 INFO Executor: Running task 8.0 in stage 5.0 (TID 68)
+16/12/03 03:13:03 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:380272+47534
+16/12/03 03:13:03 INFO Executor: Finished task 6.0 in stage 5.0 (TID 66). 1572 bytes result sent to driver
+16/12/03 03:13:03 INFO TaskSetManager: Starting task 9.0 in stage 5.0 (TID 69, localhost, partition 9, ANY, 5484 bytes)
+16/12/03 03:13:03 INFO Executor: Running task 9.0 in stage 5.0 (TID 69)
+16/12/03 03:13:03 INFO TaskSetManager: Finished task 6.0 in stage 5.0 (TID 66) in 25199 ms on localhost (6/12)
+16/12/03 03:13:04 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:427806+47534
+16/12/03 03:13:04 INFO Executor: Finished task 5.0 in stage 5.0 (TID 65). 1572 bytes result sent to driver
+16/12/03 03:13:04 INFO TaskSetManager: Starting task 10.0 in stage 5.0 (TID 70, localhost, partition 10, ANY, 5484 bytes)
+16/12/03 03:13:04 INFO Executor: Running task 10.0 in stage 5.0 (TID 70)
+16/12/03 03:13:04 INFO TaskSetManager: Finished task 5.0 in stage 5.0 (TID 65) in 25517 ms on localhost (7/12)
+16/12/03 03:13:04 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:475340+47534
+16/12/03 03:13:04 INFO Executor: Finished task 7.0 in stage 5.0 (TID 67). 1572 bytes result sent to driver
+16/12/03 03:13:04 INFO TaskSetManager: Starting task 11.0 in stage 5.0 (TID 71, localhost, partition 11, ANY, 5484 bytes)
+16/12/03 03:13:04 INFO Executor: Running task 11.0 in stage 5.0 (TID 71)
+16/12/03 03:13:04 INFO TaskSetManager: Finished task 7.0 in stage 5.0 (TID 67) in 25329 ms on localhost (8/12)
+16/12/03 03:13:04 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:522874+47534
+16/12/03 03:13:29 INFO Executor: Finished task 8.0 in stage 5.0 (TID 68). 1659 bytes result sent to driver
+16/12/03 03:13:29 INFO TaskSetManager: Finished task 8.0 in stage 5.0 (TID 68) in 25610 ms on localhost (9/12)
+16/12/03 03:13:29 INFO Executor: Finished task 11.0 in stage 5.0 (TID 71). 1572 bytes result sent to driver
+16/12/03 03:13:29 INFO TaskSetManager: Finished task 11.0 in stage 5.0 (TID 71) in 25487 ms on localhost (10/12)
+16/12/03 03:13:29 INFO Executor: Finished task 10.0 in stage 5.0 (TID 70). 1659 bytes result sent to driver
+16/12/03 03:13:29 INFO TaskSetManager: Finished task 10.0 in stage 5.0 (TID 70) in 25584 ms on localhost (11/12)
+16/12/03 03:13:29 INFO Executor: Finished task 9.0 in stage 5.0 (TID 69). 1572 bytes result sent to driver
+16/12/03 03:13:29 INFO TaskSetManager: Finished task 9.0 in stage 5.0 (TID 69) in 25874 ms on localhost (12/12)
+16/12/03 03:13:29 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+16/12/03 03:13:29 INFO DAGScheduler: ShuffleMapStage 5 (flatMap at Sapriori.scala:48) finished in 78.225 s
+16/12/03 03:13:29 INFO DAGScheduler: looking for newly runnable stages
+16/12/03 03:13:29 INFO DAGScheduler: running: Set()
+16/12/03 03:13:29 INFO DAGScheduler: waiting: Set(ResultStage 6)
+16/12/03 03:13:29 INFO DAGScheduler: failed: Set()
+16/12/03 03:13:29 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[10] at filter at Sapriori.scala:54), which has no missing parents
+16/12/03 03:13:29 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 4.0 KB, free 364.9 MB)
+16/12/03 03:13:29 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 2.2 KB, free 364.9 MB)
+16/12/03 03:13:29 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 192.168.67.81:48444 (size: 2.2 KB, free: 366.1 MB)
+16/12/03 03:13:29 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:13:29 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 6 (MapPartitionsRDD[10] at filter at Sapriori.scala:54)
+16/12/03 03:13:29 INFO TaskSchedulerImpl: Adding task set 6.0 with 12 tasks
+16/12/03 03:13:29 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 72, localhost, partition 0, ANY, 5252 bytes)
+16/12/03 03:13:29 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 73, localhost, partition 1, ANY, 5252 bytes)
+16/12/03 03:13:29 INFO TaskSetManager: Starting task 2.0 in stage 6.0 (TID 74, localhost, partition 2, ANY, 5252 bytes)
+16/12/03 03:13:29 INFO TaskSetManager: Starting task 3.0 in stage 6.0 (TID 75, localhost, partition 3, ANY, 5252 bytes)
+16/12/03 03:13:29 INFO Executor: Running task 2.0 in stage 6.0 (TID 74)
+16/12/03 03:13:29 INFO Executor: Running task 3.0 in stage 6.0 (TID 75)
+16/12/03 03:13:29 INFO Executor: Running task 1.0 in stage 6.0 (TID 73)
+16/12/03 03:13:29 INFO Executor: Running task 0.0 in stage 6.0 (TID 72)
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 3.0 in stage 6.0 (TID 75). 13635 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 4.0 in stage 6.0 (TID 76, localhost, partition 4, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO Executor: Running task 4.0 in stage 6.0 (TID 76)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 3.0 in stage 6.0 (TID 75) in 356 ms on localhost (1/12)
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 2.0 in stage 6.0 (TID 74). 12666 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 5.0 in stage 6.0 (TID 77, localhost, partition 5, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO Executor: Running task 5.0 in stage 6.0 (TID 77)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 2.0 in stage 6.0 (TID 74) in 401 ms on localhost (2/12)
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 0.0 in stage 6.0 (TID 72). 13620 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 6.0 in stage 6.0 (TID 78, localhost, partition 6, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 72) in 427 ms on localhost (3/12)
+16/12/03 03:13:30 INFO Executor: Running task 6.0 in stage 6.0 (TID 78)
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 1.0 in stage 6.0 (TID 73). 13451 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 7.0 in stage 6.0 (TID 79, localhost, partition 7, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 73) in 499 ms on localhost (4/12)
+16/12/03 03:13:30 INFO Executor: Running task 7.0 in stage 6.0 (TID 79)
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 4.0 in stage 6.0 (TID 76). 12617 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 8.0 in stage 6.0 (TID 80, localhost, partition 8, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO Executor: Running task 8.0 in stage 6.0 (TID 80)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 4.0 in stage 6.0 (TID 76) in 154 ms on localhost (5/12)
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 6.0 in stage 6.0 (TID 78). 13506 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 9.0 in stage 6.0 (TID 81, localhost, partition 9, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 6.0 in stage 6.0 (TID 78) in 117 ms on localhost (6/12)
+16/12/03 03:13:30 INFO Executor: Finished task 5.0 in stage 6.0 (TID 77). 13912 bytes result sent to driver
+16/12/03 03:13:30 INFO Executor: Running task 9.0 in stage 6.0 (TID 81)
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 10.0 in stage 6.0 (TID 82, localhost, partition 10, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 5.0 in stage 6.0 (TID 77) in 144 ms on localhost (7/12)
+16/12/03 03:13:30 INFO Executor: Running task 10.0 in stage 6.0 (TID 82)
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO Executor: Finished task 8.0 in stage 6.0 (TID 80). 12518 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Starting task 11.0 in stage 6.0 (TID 83, localhost, partition 11, ANY, 5252 bytes)
+16/12/03 03:13:30 INFO Executor: Running task 11.0 in stage 6.0 (TID 83)
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 8.0 in stage 6.0 (TID 80) in 64 ms on localhost (8/12)
+16/12/03 03:13:30 INFO Executor: Finished task 7.0 in stage 6.0 (TID 79). 13002 bytes result sent to driver
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Getting 12 non-empty blocks out of 12 blocks
+16/12/03 03:13:30 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 7.0 in stage 6.0 (TID 79) in 84 ms on localhost (9/12)
+16/12/03 03:13:30 INFO Executor: Finished task 9.0 in stage 6.0 (TID 81). 12735 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 9.0 in stage 6.0 (TID 81) in 68 ms on localhost (10/12)
+16/12/03 03:13:30 INFO Executor: Finished task 10.0 in stage 6.0 (TID 82). 13182 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 10.0 in stage 6.0 (TID 82) in 77 ms on localhost (11/12)
+16/12/03 03:13:30 INFO Executor: Finished task 11.0 in stage 6.0 (TID 83). 13240 bytes result sent to driver
+16/12/03 03:13:30 INFO TaskSetManager: Finished task 11.0 in stage 6.0 (TID 83) in 58 ms on localhost (12/12)
+16/12/03 03:13:30 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+16/12/03 03:13:30 INFO DAGScheduler: ResultStage 6 (collect at Sapriori.scala:69) finished in 0.633 s
+16/12/03 03:13:30 INFO DAGScheduler: Job 4 finished: collect at Sapriori.scala:69, took 78.923222 s
+Generate 3 candidates.
+16/12/03 03:13:31 INFO BlockManagerInfo: Removed broadcast_10_piece0 on 192.168.67.81:48444 in memory (size: 2.2 KB, free: 366.1 MB)
+And size of 3C is 0
+Filter 3C -> 3F. 
+16/12/03 03:13:39 INFO SparkContext: Starting job: collect at Sapriori.scala:86
+16/12/03 03:13:39 INFO DAGScheduler: Registering RDD 11 (flatMap at Sapriori.scala:48)
+16/12/03 03:13:39 INFO DAGScheduler: Got job 5 (collect at Sapriori.scala:86) with 12 output partitions
+16/12/03 03:13:39 INFO DAGScheduler: Final stage: ResultStage 8 (collect at Sapriori.scala:86)
+16/12/03 03:13:39 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+16/12/03 03:13:39 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 7)
+16/12/03 03:13:39 INFO DAGScheduler: Submitting ShuffleMapStage 7 (MapPartitionsRDD[11] at flatMap at Sapriori.scala:48), which has no missing parents
+16/12/03 03:13:39 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 4.4 KB, free 364.9 MB)
+16/12/03 03:13:39 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 2.5 KB, free 364.9 MB)
+16/12/03 03:13:39 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 192.168.67.81:48444 (size: 2.5 KB, free: 366.1 MB)
+16/12/03 03:13:39 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:13:39 INFO DAGScheduler: Submitting 12 missing tasks from ShuffleMapStage 7 (MapPartitionsRDD[11] at flatMap at Sapriori.scala:48)
+16/12/03 03:13:39 INFO TaskSchedulerImpl: Adding task set 7.0 with 12 tasks
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 84, localhost, partition 0, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 85, localhost, partition 1, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 2.0 in stage 7.0 (TID 86, localhost, partition 2, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 3.0 in stage 7.0 (TID 87, localhost, partition 3, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 0.0 in stage 7.0 (TID 84)
+16/12/03 03:13:39 INFO Executor: Running task 1.0 in stage 7.0 (TID 85)
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:0+47534
+16/12/03 03:13:39 INFO Executor: Running task 3.0 in stage 7.0 (TID 87)
+16/12/03 03:13:39 INFO Executor: Running task 2.0 in stage 7.0 (TID 86)
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:47534+47534
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:95068+47534
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:142602+47534
+16/12/03 03:13:39 INFO Executor: Finished task 0.0 in stage 7.0 (TID 84). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 4.0 in stage 7.0 (TID 88, localhost, partition 4, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 84) in 57 ms on localhost (1/12)
+16/12/03 03:13:39 INFO Executor: Running task 4.0 in stage 7.0 (TID 88)
+16/12/03 03:13:39 INFO Executor: Finished task 1.0 in stage 7.0 (TID 85). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 2.0 in stage 7.0 (TID 86). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:190136+47534
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 5.0 in stage 7.0 (TID 89, localhost, partition 5, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 85) in 70 ms on localhost (2/12)
+16/12/03 03:13:39 INFO Executor: Running task 5.0 in stage 7.0 (TID 89)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 2.0 in stage 7.0 (TID 86) in 71 ms on localhost (3/12)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 6.0 in stage 7.0 (TID 90, localhost, partition 6, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 6.0 in stage 7.0 (TID 90)
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:237670+47534
+16/12/03 03:13:39 INFO Executor: Finished task 3.0 in stage 7.0 (TID 87). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:285204+47534
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 7.0 in stage 7.0 (TID 91, localhost, partition 7, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 7.0 in stage 7.0 (TID 91)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 3.0 in stage 7.0 (TID 87) in 85 ms on localhost (4/12)
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:332738+47534
+16/12/03 03:13:39 INFO Executor: Finished task 4.0 in stage 7.0 (TID 88). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 6.0 in stage 7.0 (TID 90). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 8.0 in stage 7.0 (TID 92, localhost, partition 8, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 8.0 in stage 7.0 (TID 92)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 9.0 in stage 7.0 (TID 93, localhost, partition 9, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 4.0 in stage 7.0 (TID 88) in 73 ms on localhost (5/12)
+16/12/03 03:13:39 INFO Executor: Running task 9.0 in stage 7.0 (TID 93)
+16/12/03 03:13:39 INFO Executor: Finished task 5.0 in stage 7.0 (TID 89). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 6.0 in stage 7.0 (TID 90) in 53 ms on localhost (6/12)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 10.0 in stage 7.0 (TID 94, localhost, partition 10, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 10.0 in stage 7.0 (TID 94)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 5.0 in stage 7.0 (TID 89) in 66 ms on localhost (7/12)
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:475340+47534
+16/12/03 03:13:39 INFO Executor: Finished task 7.0 in stage 7.0 (TID 91). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:427806+47534
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:380272+47534
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 11.0 in stage 7.0 (TID 95, localhost, partition 11, ANY, 5484 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 11.0 in stage 7.0 (TID 95)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 7.0 in stage 7.0 (TID 91) in 60 ms on localhost (8/12)
+16/12/03 03:13:39 INFO HadoopRDD: Input split: hdfs://zhm01:9000/user/root/data/mushroom.csv:522874+47534
+16/12/03 03:13:39 INFO Executor: Finished task 8.0 in stage 7.0 (TID 92). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 8.0 in stage 7.0 (TID 92) in 60 ms on localhost (9/12)
+16/12/03 03:13:39 INFO Executor: Finished task 9.0 in stage 7.0 (TID 93). 1404 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 10.0 in stage 7.0 (TID 94). 1317 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 9.0 in stage 7.0 (TID 93) in 72 ms on localhost (10/12)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 10.0 in stage 7.0 (TID 94) in 69 ms on localhost (11/12)
+16/12/03 03:13:39 INFO Executor: Finished task 11.0 in stage 7.0 (TID 95). 1390 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 11.0 in stage 7.0 (TID 95) in 58 ms on localhost (12/12)
+16/12/03 03:13:39 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+16/12/03 03:13:39 INFO DAGScheduler: ShuffleMapStage 7 (flatMap at Sapriori.scala:48) finished in 0.205 s
+16/12/03 03:13:39 INFO DAGScheduler: looking for newly runnable stages
+16/12/03 03:13:39 INFO DAGScheduler: running: Set()
+16/12/03 03:13:39 INFO DAGScheduler: waiting: Set(ResultStage 8)
+16/12/03 03:13:39 INFO DAGScheduler: failed: Set()
+16/12/03 03:13:39 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[13] at filter at Sapriori.scala:54), which has no missing parents
+16/12/03 03:13:39 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 4.0 KB, free 364.9 MB)
+16/12/03 03:13:39 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 2.2 KB, free 364.9 MB)
+16/12/03 03:13:39 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 192.168.67.81:48444 (size: 2.2 KB, free: 366.1 MB)
+16/12/03 03:13:39 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1012
+16/12/03 03:13:39 INFO DAGScheduler: Submitting 12 missing tasks from ResultStage 8 (MapPartitionsRDD[13] at filter at Sapriori.scala:54)
+16/12/03 03:13:39 INFO TaskSchedulerImpl: Adding task set 8.0 with 12 tasks
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 96, localhost, partition 0, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 97, localhost, partition 1, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 2.0 in stage 8.0 (TID 98, localhost, partition 2, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 3.0 in stage 8.0 (TID 99, localhost, partition 3, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 3.0 in stage 8.0 (TID 99)
+16/12/03 03:13:39 INFO Executor: Running task 1.0 in stage 8.0 (TID 97)
+16/12/03 03:13:39 INFO Executor: Running task 0.0 in stage 8.0 (TID 96)
+16/12/03 03:13:39 INFO Executor: Running task 2.0 in stage 8.0 (TID 98)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:39 INFO Executor: Finished task 3.0 in stage 8.0 (TID 99). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 2 ms
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 4.0 in stage 8.0 (TID 100, localhost, partition 4, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:39 INFO Executor: Running task 4.0 in stage 8.0 (TID 100)
+16/12/03 03:13:39 INFO Executor: Finished task 0.0 in stage 8.0 (TID 96). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 1.0 in stage 8.0 (TID 97). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 2.0 in stage 8.0 (TID 98). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 3.0 in stage 8.0 (TID 99) in 18 ms on localhost (1/12)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 5.0 in stage 8.0 (TID 101, localhost, partition 5, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 5.0 in stage 8.0 (TID 101)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 6.0 in stage 8.0 (TID 102, localhost, partition 6, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 6.0 in stage 8.0 (TID 102)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 96) in 32 ms on localhost (2/12)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 7.0 in stage 8.0 (TID 103, localhost, partition 7, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 97) in 38 ms on localhost (3/12)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 2.0 in stage 8.0 (TID 98) in 38 ms on localhost (4/12)
+16/12/03 03:13:39 INFO Executor: Running task 7.0 in stage 8.0 (TID 103)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:39 INFO Executor: Finished task 4.0 in stage 8.0 (TID 100). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 6.0 in stage 8.0 (TID 102). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 8.0 in stage 8.0 (TID 104, localhost, partition 8, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 4.0 in stage 8.0 (TID 100) in 29 ms on localhost (5/12)
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 9.0 in stage 8.0 (TID 105, localhost, partition 9, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:39 INFO Executor: Running task 8.0 in stage 8.0 (TID 104)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 6.0 in stage 8.0 (TID 102) in 22 ms on localhost (6/12)
+16/12/03 03:13:39 INFO Executor: Finished task 7.0 in stage 8.0 (TID 103). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 10.0 in stage 8.0 (TID 106, localhost, partition 10, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 10.0 in stage 8.0 (TID 106)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 7.0 in stage 8.0 (TID 103) in 19 ms on localhost (7/12)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:39 INFO Executor: Running task 9.0 in stage 8.0 (TID 105)
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+16/12/03 03:13:39 INFO Executor: Finished task 5.0 in stage 8.0 (TID 101). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 6 ms
+16/12/03 03:13:39 INFO TaskSetManager: Starting task 11.0 in stage 8.0 (TID 107, localhost, partition 11, PROCESS_LOCAL, 5252 bytes)
+16/12/03 03:13:39 INFO Executor: Running task 11.0 in stage 8.0 (TID 107)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 5.0 in stage 8.0 (TID 101) in 45 ms on localhost (8/12)
+16/12/03 03:13:39 INFO Executor: Finished task 10.0 in stage 8.0 (TID 106). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO Executor: Finished task 8.0 in stage 8.0 (TID 104). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 8.0 in stage 8.0 (TID 104) in 31 ms on localhost (9/12)
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 10.0 in stage 8.0 (TID 106) in 25 ms on localhost (10/12)
+16/12/03 03:13:39 INFO Executor: Finished task 9.0 in stage 8.0 (TID 105). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Getting 0 non-empty blocks out of 12 blocks
+16/12/03 03:13:39 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 9.0 in stage 8.0 (TID 105) in 31 ms on localhost (11/12)
+16/12/03 03:13:39 INFO Executor: Finished task 11.0 in stage 8.0 (TID 107). 1549 bytes result sent to driver
+16/12/03 03:13:39 INFO TaskSetManager: Finished task 11.0 in stage 8.0 (TID 107) in 14 ms on localhost (12/12)
+16/12/03 03:13:39 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+16/12/03 03:13:39 INFO DAGScheduler: ResultStage 8 (collect at Sapriori.scala:86) finished in 0.087 s
+16/12/03 03:13:39 INFO DAGScheduler: Job 5 finished: collect at Sapriori.scala:86, took 0.334298 s
+And size of 3F is 0 
+16/12/03 03:13:40 INFO SparkUI: Stopped Spark web UI at http://192.168.67.81:4040
+16/12/03 03:13:40 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/12/03 03:13:40 INFO MemoryStore: MemoryStore cleared
+16/12/03 03:13:40 INFO BlockManager: BlockManager stopped
+16/12/03 03:13:40 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/12/03 03:13:40 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/12/03 03:13:40 INFO SparkContext: Successfully stopped SparkContext
+16/12/03 03:13:40 INFO ShutdownHookManager: Shutdown hook called
+16/12/03 03:13:40 INFO ShutdownHookManager: Deleting directory /tmp/spark-528f4cc2-68e8-485b-9fa0-0e5dac505053

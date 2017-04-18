@@ -5,6 +5,6 @@ sbt package
 if [ $? -ne 0 ];then
     exit 1
 fi
-$SPARK_HOME/bin/spark-submit /home/zhm/sparkEclatV1/target/scala-2.11/sparkeclatv1_2.11-1.0.jar --class "SB4" --master spark://192.168.67.81:7077  
+$SPARK_HOME/bin/spark-submit /home/zhm/sparkEclatV1/target/scala-2.11/sparkeclatv1_2.11-1.0.jar --class "sEclat" --master spark://192.168.67.111:7077  
 
 

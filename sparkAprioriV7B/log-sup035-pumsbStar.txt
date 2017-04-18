@@ -1,0 +1,128 @@
+# sh run.sh
+[info] Set current project to Spark Apriori (in build file:/home/zhm/sparkAprioriV7B/)
+[info] Compiling 1 Scala source to /home/zhm/sparkAprioriV7B/target/scala-2.11/classes...
+[info] Packaging /home/zhm/sparkAprioriV7B/target/scala-2.11/spark-apriori_2.11-1.0.jar ...
+[info] Done packaging.
+[success] Total time: 12 s, completed Mar 13, 2017 6:55:15 PM
+17/03/13 18:55:17 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Gen 2C. 2017-03-13 18:55:26                                                     
+GG! Size of 2C is 1485. 2017-03-13 18:55:26
+2C -> 2F. 2017-03-13 18:55:26
+GG! Size of 2F is 473. 2017-03-13 18:56:23                                      
+
+Gen 3C.
+GG! Size of 3C is 5680.Timecost: 1s.                                            
+3C -> 3F.
+GG! Size of 3F is 1802.Timecost: 229s.                                          
+This iteration cost 231s
+
+Gen 4C.
+GG! Size of 4C is 11821.Timecost: 1s.                                           
+4C -> 4F.
+GG! Size of 4F is 5032.Timecost: 502s.                                          
+This iteration cost 504s
+
+Gen 5C.
+GG! Size of 5C is 22391.Timecost: 5s.                                           
+5C -> 5F.
+GG! Size of 5F is 10710.Timecost: 1023s.                                        
+This iteration cost 1028s
+
+Gen 6C.
+GG! Size of 6C is 34758.Timecost: 19s.                                          
+6C -> 6F.
+GG! Size of 6F is 17646.Timecost: 1628s.                                        
+This iteration cost 1647s
+
+Gen 7C.
+17/03/13 19:53:15 WARN TaskSetManager: Stage 17 contains a task of very large size (131 KB). The maximum recommended task size is 100 KB.
+GG! Size of 7C is 43323.Timecost: 48s.                                          
+7C -> 7F.
+GG! Size of 7F is 22773.Timecost: 2268s.                                        
+This iteration cost 2317s
+
+Gen 8C.
+17/03/13 20:31:52 WARN TaskSetManager: Stage 20 contains a task of very large size (103 KB). The maximum recommended task size is 100 KB.
+GG! Size of 8C is 44176.Timecost: 92s.                                          
+8C -> 8F.
+GG! Size of 8F is 22982.Timecost: 2387s.                                        
+This iteration cost 2480s
+
+Gen 9C.
+17/03/13 21:13:13 WARN TaskSetManager: Stage 23 contains a task of very large size (115 KB). The maximum recommended task size is 100 KB.
+GG! Size of 9C is 36616.Timecost: 105s.                                         
+9C -> 9F.
+GG! Size of 9F is 17952.Timecost: 1957s.                                        
+This iteration cost 2063s
+
+Gen 10C.
+17/03/13 21:47:36 WARN TaskSetManager: Stage 26 contains a task of very large size (100 KB). The maximum recommended task size is 100 KB.
+GG! Size of 10C is 23995.Timecost: 64s.                                         
+10C -> 10F.
+GG! Size of 10F is 10692.Timecost: 1283s.                                       
+This iteration cost 1348s
+
+Gen 11C.
+17/03/13 22:10:05 WARN TaskSetManager: Stage 29 contains a task of very large size (123 KB). The maximum recommended task size is 100 KB.
+GG! Size of 11C is 12013.Timecost: 25s.                                         
+11C -> 11F.
+GG! Size of 11F is 4755.Timecost: 641s.                                         
+This iteration cost 666s
+
+Gen 12C.
+GG! Size of 12C is 4435.Timecost: 5s.                                           
+12C -> 12F.
+GG! Size of 12F is 1529.Timecost: 235s.                                         
+This iteration cost 240s
+
+Gen 13C.
+GG! Size of 13C is 1159.Timecost: 1s.                                           
+13C -> 13F.
+GG! Size of 13F is 337.Timecost: 60s.                                           
+This iteration cost 61s
+
+Gen 14C.
+GG! Size of 14C is 202.Timecost: 0s.
+14C -> 14F.
+GG! Size of 14F is 46.Timecost: 10s.                                            
+This iteration cost 11s
+
+Gen 15C.
+GG! Size of 15C is 21.Timecost: 0s.
+15C -> 15F.
+GG! Size of 15F is 3.Timecost: 1s.                                              
+This iteration cost 1s
+
+Gen 16C.
+GG! Size of 16C is 1.Timecost: 0s.
+16C -> 16F.
+GG! Size of 16F is 0.Timecost: 0s.
+This iteration cost 0s
+
+Timecost: 12672s.
+Write into /home/zhm/sparkAprioriV7B/FIs.txt
+
+---------------------------
+serial running
+
+# scala -J-Xmx20480m src/aprioriAlgm.scala 
+17166
+Gen 2C.               2017-03-18 09:28:31
+GG! Size of 2C is 1485. 2017-03-18 09:28:32
+2C -> 2F
+GG! Size of 2F is 473. 2017-03-18 09:31:45
+
+Gen 3-cdds.
+GG！ Size of 3C is 3353. Timecost:0s
+3C -> 3F.
+GG！ Size of 3F is 1802.Timecost:494s
+
+Gen 4-cdds.
+GG！ Size of 4C is 7136. Timecost:5s
+4C -> 4F.
+GG！ Size of 4F is 5032.Timecost:1005s
+
+Gen 5-cdds.
+GG！ Size of 5C is 13702. Timecost:45s
+5C -> 5F.
+(12h+)

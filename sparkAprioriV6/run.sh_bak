@@ -1,0 +1,12 @@
+#! /bin/bash
+
+export PATH=$PATH:/usr/local/sbt-launcher-packaging-0.13.13/bin
+sbt package
+if [ $? -ne 0 ];then
+    exit 1
+fi
+$SPARK_HOME/bin/spark-submit /home/zhm/sparkAprioriV2/target/scala-2.11/spark-apriori_2.11-1.0.jar \
+ --class "SimpleApp" \
+ --master spark://zhm01:7077
+
+

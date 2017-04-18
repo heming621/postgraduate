@@ -4,7 +4,7 @@
 		module="spark-apriori_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20170109142853"
+		publication="20170106010418"
 	>
 		<description>
 		Spark Apriori

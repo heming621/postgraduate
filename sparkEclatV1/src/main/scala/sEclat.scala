@@ -17,7 +17,7 @@ object sEclat{
 			xx = xx.dropRight(1)            
 			if(isup >= minSup && (_x.keys.toSet.contains(itemtid._1) | !prefix.isEmpty)){    //zi 只对出现在_x里面的item生成频繁集。//zi 取最后一个item_tid，如果满足最小支持度，并与剩余的(itemSet,TIDs)做交集。
                 prefixRcs = prefix + itemtid._1
-				println(prefixRcs -> isup)    
+				//println(prefixRcs -> isup)    
                 if(prefix.isEmpty)                               //zi prefix若为空，则非递归。
 					result += Set(itemtid._1) -> isup
                 else
@@ -30,7 +30,7 @@ object sEclat{
 						                                 //zi 假设itemB与A的事务交集大于minSup，则递归时，看似存项B的支持度，实际存的是(A,B)项集的支持度。//zi 递归时候prefix不空。
 					}                                            
 				}
-				if(!(_x.keys.toSet & prefixRcs).isEmpty)
+				if(!(_x.keys.toSet & prefixRcs).isEmpty) // && prefixRcs.size < 7)
 					eclat(prefixRcs, _x, suffix, result, minSup) 
 			}
 		}
@@ -41,12 +41,13 @@ object sEclat{
 		var stime = System.currentTimeMillis()
 		val HDATA_PATH = "hdfs://zhm01:9000/user/root/data/mushroom.dat"
 		val LDATA_PATH = "/home/mountDir/downloads/data/mushroom.dat"
-		val minSup = (0.1*8124).toInt
+		val minSup = (0.05*8124).toInt
 		val conf = new SparkConf().setAppName("sEclat")
 		                          .set("spark.master", "spark://zhm01:7077")
-								  .set("spark.executor.memory", "8g")
-								  .set("spark.cores.max", "20")
-								  .set("spark.default.parallelism", "40")
+								  .set("spark.driver.memory","28g")
+								  .set("spark.executor.memory", "10g")
+								  .set("spark.cores.max", "80")
+								  .set("spark.default.parallelism", "320")
         val sc = new SparkContext(conf)
         ////// READ FILE and get itemSet_TIDs, store in itemTid.
 		var tid = 0

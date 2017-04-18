@@ -1,0 +1,51 @@
+# sh run.sh
+[info] Set current project to Spark Apriori (in build file:/home/zhm/sparkAprioriV7E/)
+[info] Compiling 1 Scala source to /home/zhm/sparkAprioriV7E/target/scala-2.11/classes...
+[info] Packaging /home/zhm/sparkAprioriV7E/target/scala-2.11/spark-apriori_2.11-1.0.jar ...
+[info] Done packaging.
+[success] Total time: 12 s, completed Mar 31, 2017 7:09:39 AM
+17/03/31 07:09:40 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Gen 2C. 2017-03-31 07:10:16                                                     
+GG! Size of 2C is 1711. 2017-03-31 07:10:16
+2C -> 2F. 2017-03-31 07:10:16
+GG! Size of 2F is 260. 2017-03-31 09:16:42                                      
+
+Gen 3C.
+GG! Size of 3C is 4491.Timecost: 1s.                                            
+3C -> 3F.
+GG! Size of 3F is 481.Timecost: 20708s.                                         
+This iteration cost 20709s
+
+Gen 4C.
+GG! Size of 4C is 5235.Timecost: 0s.
+4C -> 4F.
+GG! Size of 4F is 472.Timecost: 24705s.                                         
+This iteration cost 24706s
+
+Gen 5C.
+GG! Size of 5C is 3162.Timecost: 0s.
+5C -> 5F.
+GG! Size of 5F is 262.Timecost: 15045s.                                         
+This iteration cost 15046s
+
+Gen 6C.
+GG! Size of 6C is 1054.Timecost: 0s.
+6C -> 6F.
+GG! Size of 6F is 74.Timecost: 5483s.                                           
+This iteration cost 5484s
+
+Gen 7C.
+GG! Size of 7C is 163.Timecost: 0s.
+7C -> 7F.
+GG! Size of 7F is 8.Timecost: 844s.                                             
+This iteration cost 844s
+
+Gen 8C.
+GG! Size of 8C is 5.Timecost: 0s.
+8C -> 8F.
+GG! Size of 8F is 0.Timecost: 29s.                                              
+This iteration cost 29s
+
+Timecost: 74442s.
+Write into /home/zhm/sparkAprioriV7E/FIs.txt
+

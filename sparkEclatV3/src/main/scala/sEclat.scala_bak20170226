@@ -1,0 +1,47 @@
+import org.apache.spark.SparkContext._
+import org.apache.spark.rdd._
+import org.apache.spark._
+import scala.collection.immutable.Set
+import scala.io.Source
+import java.io._
+
+object sEclat{
+	def main(args: Array[String]){
+		val HDATA_PATH = "hdfs://zhm01:9000/user/root/data/mushroom.dat"
+		val LDATA_PATH = "/home/mountDir/downloads/data/mushroom.dat"
+		val minSup = 0.5
+		val conf = new SparkConf().setAppName("sEclat")
+		                          .set("spark.master", "spark://zhm01:7077")
+								  .set("spark.executor.memory", "8g")
+								  .set("spark.cores.max", "40")
+								  .set("spark.default.parallelism", "80")
+        val sc = new SparkContext(conf)
+        //// READ FILE and get itemSet_TIDs
+		var tid = 0
+		var itemTid:scala.collection.mutable.Map[Int, Set[Int]] = scala.collection.mutable.Map()
+		val bufferedSource = Source.fromFile(LDATA_PATH)
+        for(line<-bufferedSource.getLines){
+			tid += 1;
+			for(item<-line.split(" ")){
+				var itemi = item.toInt
+				if(!itemTid.contains(itemi))
+					itemTid += itemi->Set(tid)
+				else
+					itemTid(itemi) += tid
+			}
+		}
+		bufferedSource.close()
+		// test
+		//val file = new File("/home/zhm/sparkEclatV1/test.txt")
+        //val bw = new BufferedWriter(new FileWriter(file))
+		//for(vl<-itemTid)bw.write(vl.toString+"\n")
+		//bw.close()
+
+		//// broadcast itemSet_TIDs
+		var bcItemTid = sc.broadcast(itemTid)
+		sc.parallelize(itemTid).mapPartitions(eclat(_,bcItemTid.value))
+
+
+
+	}
+}
