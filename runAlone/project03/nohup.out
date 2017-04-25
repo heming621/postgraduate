@@ -1,0 +1,142 @@
+29427
+java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at Main$$anonfun$3.apply(aprioriAlgm.scala:68)
+	at Main$$anonfun$3.apply(aprioriAlgm.scala:68)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:245)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:245)
+	at scala.collection.AbstractTraversable.map(Traversable.scala:104)
+	at Main$.main(aprioriAlgm.scala:68)
+	at Main.main(aprioriAlgm.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at scala.reflect.internal.util.ScalaClassLoader$$anonfun$run$1.apply(ScalaClassLoader.scala:70)
+	at scala.reflect.internal.util.ScalaClassLoader$class.asContext(ScalaClassLoader.scala:31)
+	at scala.reflect.internal.util.ScalaClassLoader$URLClassLoader.asContext(ScalaClassLoader.scala:101)
+	at scala.reflect.internal.util.ScalaClassLoader$class.run(ScalaClassLoader.scala:70)
+	at scala.reflect.internal.util.ScalaClassLoader$URLClassLoader.run(ScalaClassLoader.scala:101)
+	at scala.tools.nsc.CommonRunner$class.run(ObjectRunner.scala:22)
+	at scala.tools.nsc.ObjectRunner$.run(ObjectRunner.scala:39)
+	at scala.tools.nsc.CommonRunner$class.runAndCatch(ObjectRunner.scala:29)
+	at scala.tools.nsc.ObjectRunner$.runAndCatch(ObjectRunner.scala:39)
+	at scala.tools.nsc.ScriptRunner.scala$tools$nsc$ScriptRunner$$runCompiled(ScriptRunner.scala:175)
+	at scala.tools.nsc.ScriptRunner$$anonfun$runScript$1.apply(ScriptRunner.scala:192)
+	at scala.tools.nsc.ScriptRunner$$anonfun$runScript$1.apply(ScriptRunner.scala:192)
+	at scala.tools.nsc.ScriptRunner$$anonfun$withCompiledScript$1$$anonfun$apply$mcZ$sp$1.apply(ScriptRunner.scala:161)
+	at scala.tools.nsc.ScriptRunner$$anonfun$withCompiledScript$1.apply$mcZ$sp(ScriptRunner.scala:161)
+	at scala.tools.nsc.ScriptRunner$$anonfun$withCompiledScript$1.apply(ScriptRunner.scala:129)
+	at scala.tools.nsc.ScriptRunner$$anonfun$withCompiledScript$1.apply(ScriptRunner.scala:129)
+	at scala.tools.nsc.util.package$.trackingThreads(package.scala:43)
+	at scala.tools.nsc.util.package$.waitingForThreads(package.scala:27)
+29427
+Gen 2C.               2017-03-17 11:37:14
+GG! Size of 2C is 91. 2017-03-17 11:37:14
+2C -> 2F
+GG! Size of 2F is 28. 2017-03-17 11:37:20
+
+Gen 3-cdds.
+GG！ Size of 3C is 51. Timecost:0s
+3C -> 3F.
+GG！ Size of 3F is 45.Timecost:5s
+
+Gen 4-cdds.
+GG！ Size of 4C is 51. Timecost:0s
+4C -> 4F.
+GG！ Size of 4F is 45.Timecost:3s
+
+Gen 5-cdds.
+GG！ Size of 5C is 28. Timecost:0s
+5C -> 5F.
+GG！ Size of 5F is 26.Timecost:1s
+
+Gen 6-cdds.
+GG！ Size of 6C is 8. Timecost:0s
+6C -> 6F.
+GG！ Size of 6F is 8.Timecost:0s
+
+Gen 7-cdds.
+GG！ Size of 7C is 1. Timecost:0s
+7C -> 7F.
+GG！ Size of 7F is 1.Timecost:0s
+
+Gen 8-cdds.
+GG！ Size of 8C is 0. Timecost:0s
+8C -> 8F.
+GG！ Size of 8F is 0.Timecost:0s
+
+
+Timecost:29s
+Write into /home/zhm/project03B/FIs.txt
+19618
+Gen 2C.               2017-03-17 12:55:31
+GG! Size of 2C is 1035. 2017-03-17 12:55:31
+2C -> 2F
+GG! Size of 2F is 282. 2017-03-17 12:57:30
+
+Gen 3-cdds.
+GG！ Size of 3C is 1516. Timecost:0s
+3C -> 3F.
+GG！ Size of 3F is 974.Timecost:230s
+
+Gen 4-cdds.
+GG！ Size of 4C is 3283. Timecost:4s
+4C -> 4F.
+GG！ Size of 4F is 2337.Timecost:451s
+
+Gen 5-cdds.
+GG！ Size of 5C is 5511. Timecost:13s
+5C -> 5F.
+GG！ Size of 5F is 4088.Timecost:815s
+
+Gen 6-cdds.
+GG！ Size of 6C is 6854. Timecost:35s
+6C -> 6F.
+GG！ Size of 6F is 5468.Timecost:1151s
+
+Gen 7-cdds.
+GG！ Size of 7C is 6538. Timecost:83s
+7C -> 7F.
+GG！ Size of 7F is 5650.Timecost:958s
+
+Gen 8-cdds.
+GG！ Size of 8C is 4801. Timecost:73s
+8C -> 8F.
+GG！ Size of 8F is 4451.Timecost:580s
+
+Gen 9-cdds.
+GG！ Size of 9C is 2677. Timecost:50s
+9C -> 9F.
+GG！ Size of 9F is 2605.Timecost:313s
+
+Gen 10-cdds.
+GG！ Size of 10C is 1095. Timecost:19s
+10C -> 10F.
+GG！ Size of 10F is 1090.Timecost:109s
+
+Gen 11-cdds.
+GG！ Size of 11C is 307. Timecost:3s
+11C -> 11F.
+GG！ Size of 11F is 307.Timecost:26s
+
+Gen 12-cdds.
+GG！ Size of 12C is 52. Timecost:0s
+12C -> 12F.
+GG！ Size of 12F is 52.Timecost:4s
+
+Gen 13-cdds.
+GG！ Size of 13C is 4. Timecost:0s
+13C -> 13F.
+GG！ Size of 13F is 4.Timecost:0s
+
+Gen 14-cdds.
+GG！ Size of 14C is 0. Timecost:0s
+14C -> 14F.
+GG！ Size of 14F is 0.Timecost:0s
+
+
+Timecost:5055s
+Write into /home/zhm/project03B/FIs.txt
